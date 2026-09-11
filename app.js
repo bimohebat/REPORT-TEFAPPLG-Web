@@ -37,8 +37,9 @@ function imgFallback(e){e.target.src="https://images.unsplash.com/photo-15163213
 
 function layout(content,active){
  const person=state.page==="admin"?state.admin:state.user;
- return `<div class="shell"><header class="topbar"><div class="topbar-inner"><div class="brand"><div class="brand-mark">T</div><div>TEFA PPLG<small>SMK N 11 SEMARANG · ANGKATAN 5</small></div></div>${person?`<button class="btn small" onclick="go('#profile')"><img class="avatar" src="${person.photo||'https://i.pravatar.cc/80?img=12'}" alt=""> ${person.name||person.nama||"Profil"}</button>`:""}</div></header><main class="container">${content}</main>${person?bottomnav(active):""}</div>`
+ return `<div class="shell"><header class="topbar"><div class="topbar-inner"><div class="brand"><div class="brand-mark">T</div><div>TEFA PPLG<small>SMK N 11 SEMARANG · ANGKATAN 5</small></div></div>${person?`<button class="btn small" onclick="go('#profile')"><img class="avatar" src="${person.photo||'https://pravatar.cc'}" alt=""> ${person.name||person.nama||"Profil"}</button>`:""}</div></header><main class="container">${content}</main>${person?bottomnav(active):""}</div>`;
 }
+
 function bottomnav(active){
  const items=state.page==="admin"?[
   ["home","⌂","Beranda"],["news","▤","Berita"],["users","♙","User"],["progress","✓","Progres"],["profile","◎","Profil"]
